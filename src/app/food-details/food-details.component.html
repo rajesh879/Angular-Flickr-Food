@@ -1,0 +1,57 @@
+<div class="card" style="width: 28rem;">
+  
+  <img class="card-img-top" [src]="getImageUrl()" alt="Card image">
+  
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="food-content">
+        <h3>{{chosenFood.title._content}}</h3>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+ 		<strong>  By: </strong>
+        {{chosenFood.owner.realname}}
+      </div>
+
+      <div class="col-sm-6">
+       <strong>  Date :   </strong>
+        {{chosenFood.dates.taken | date}}
+      </div>
+
+      <div class="col-sm-12">
+      <br>
+
+        <strong>
+        Description :</strong>
+        <p>{{chosenFood.description._content}}</p>
+      </div>
+
+      <div class="col-sm-12">
+        <strong>
+        Rating :</strong>
+      </div>
+
+      <div class="col-sm-12">
+        <ngx-stars [size]="2" (ratingOutput)="onRatingSet($event)" [maxStars]="10" [initialStars]="initialStars"></ngx-stars>
+      </div>
+      </div>
+
+      <div class="col-sm-12">
+        <label for="reviewText"> <strong>    Review : </strong></label>
+        <textarea class="form-control rounded-0" placeholder="Please write your opinion here.." name="reviewText" [(ngModel)]="userReview.reviewText" rows="5"></textarea>
+      </div>
+
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary review-btn" (click)="createPhotoReview()" name="button"> Create Review </button>
+      </div>
+
+    
+  </div>
+
+<div id="snackbar">
+</div>

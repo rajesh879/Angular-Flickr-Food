@@ -1,0 +1,26 @@
+
+<div class="row">
+  
+
+  <div class="col-sm-4 food-list" *ngFor="let food of foodList">
+      <div class="card food-item">
+        
+        <a href="javascript:void(0);" (click)="foodSelected(food)">
+          
+          <div class="food-image">
+            <img class="card-img-top hoverable" [src]="getImageUrl(food)" alt="Card image">
+          </div>
+         
+          <div class="container">
+  
+  <div class="overlay"> <ngx-stars [readonly]="true" [size]="2"  [maxStars]="10" [initialStars]="checkAlreadyReviewed(food.id)"></ngx-stars></div>
+</div>
+        
+        
+        </a>
+
+      </div>
+  </div>
+</div>
+
+
